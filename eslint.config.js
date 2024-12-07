@@ -1,12 +1,12 @@
 import pluginJs from '@eslint/js'
+import eslintConfigPrettier from 'eslint-config-prettier'
+import pluginPrettier from 'eslint-plugin-prettier'
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
 import pluginReact from 'eslint-plugin-react'
 import hooksPlugin from 'eslint-plugin-react-hooks'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
-import eslintConfigPrettier from 'eslint-config-prettier'
-import pluginPrettier from 'eslint-plugin-prettier'
 
 export default [
   { files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'] },
@@ -60,6 +60,7 @@ export default [
       'react/display-name': 'off',
       ...eslintConfigPrettier.rules,
       'prettier/prettier': 'error',
+      '@typescript-eslint/no-require-imports': 'off',
     },
   },
 ]
