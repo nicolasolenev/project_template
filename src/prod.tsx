@@ -3,20 +3,20 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
 import { App } from './components/App'
+import { IBlocks } from './types/elma.types'
 
 interface Props {
-  node: HTMLDivElement // root Node
-  data?: unknown
-  dataChangeHandler?: (data: unknown) => void
-  // ...
+  root: HTMLDivElement
+  data: IBlocks
+  changeHandler: (data: IBlocks) => void
 }
 
-const initReactApp = ({ node }: Props) => {
-  createRoot(node).render(
+const reactRender = ({ root, data, changeHandler }: Props) => {
+  createRoot(root).render(
     <StrictMode>
-      <App />
+      <App data={data} changeHandler={changeHandler} />
     </StrictMode>,
   )
 }
 
-export { initReactApp }
+export { reactRender }

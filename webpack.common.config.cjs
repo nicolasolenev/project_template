@@ -1,7 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const FileManagerPlugin = require('filemanager-webpack-plugin')
 const path = require('path')
-const cssInJsBundle = true
+const cssInJsBundle = false
 
 module.exports = {
   module: {
