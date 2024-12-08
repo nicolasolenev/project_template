@@ -63,7 +63,7 @@ module.exports = {
     }),
     !cssInJsBundle &&
       new MiniCssExtractPlugin({
-        filename: '[name].[contenthash].css',
+        filename: 'main.css',
       }),
   ],
   performance: {
