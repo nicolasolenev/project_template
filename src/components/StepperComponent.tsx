@@ -1,7 +1,12 @@
-import { Button, Group, Stepper } from '@mantine/core'
+import { Box, Button, Group, Stack, Stepper } from '@mantine/core'
 import React, { FC, useState } from 'react'
 
 import { IBlocks } from '@/types/elma.types'
+
+import { CheckboxComponent } from './CheckboxComponent'
+import { NumberFieldComponent } from './NumberFieldComponent'
+import { RadioTest } from './RadioTest'
+import { TextInputComponent } from './TextInputComponent'
 
 interface Props {
   data: IBlocks
@@ -35,7 +40,17 @@ export const StepperComponent: FC<Props> = ({ data, changeHandler }) => {
               label={block.name}
               description={block.helper_text}
             >
-              {JSON.stringify(block.questions)}
+              <Box>{JSON.stringify(block.questions)}</Box>
+
+              <Stack mt='sm' maw={500}>
+                <NumberFieldComponent />
+
+                <RadioTest />
+
+                <CheckboxComponent />
+
+                <TextInputComponent />
+              </Stack>
             </Stepper.Step>
           )
         })}
