@@ -5,14 +5,14 @@ import { createRoot } from 'react-dom/client'
 import { App } from './components/App'
 
 interface Props {
-  node: HTMLDivElement // root Node
+  root: HTMLDivElement
   data?: unknown
-  dataChangeHandler?: (data: unknown) => void
+  changeHandler?: (data: unknown) => void
   // ...
 }
 
-const initReactApp = ({ node }: Props) => {
-  createRoot(node).render(
+const initReactApp = ({ root }: Props) => {
+  createRoot(root).render(
     <StrictMode>
       <App />
     </StrictMode>,
